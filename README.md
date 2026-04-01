@@ -89,13 +89,20 @@ There are 22 classes, of which **14** are corelated to the abstract one **ImageE
 ##### │ ├── Grain, Blur, Contrast
 ##### └── SizeFilters
 ##### ├── Crop, Resize
-##### Diamond inheritance: presets inherit form both 'ColorFilters' and 'DetailFilters' using **virtual public**.
+
+**Diamond inheritance**: presets inherit form both 'ColorFilters' and 'DetailFilters' using **virtual public**.
 ##### Static implementation: 
-static int totalEditedImages in Image class which counts all saved images across the application, static int getEditedImages() which returns the total count and static Menu* instance in Menu class which implements the Singleton .
+
+- static int totalEditedImages in Image class which counts all saved images across the application
+- static int getEditedImages() which returns the total count
+- static Menu* instance in Menu class which implements the Singleton 
 
 #### Encapsulation and Resource Management
 ##### Access Modifiers (private, protected, public):
-**private** ->Image class members (width, height, pixels) - only accessible within Image class,**protected** -> detail filter parameters (amountGrain, amountBlur,amountContrast)-to be accessible by derived classes in case there will be more made (HighContrast for example) and **public** ->Interface methods (applySettings, getFilterName, load, save) - accessible to all. 
+
+- **private** ->Image class members (width, height, pixels) - only accessible within Image class
+- **protected** -> detail filter parameters (amountGrain, amountBlur,amountContrast)-to be accessible by derived classes in case there will be more made (HighContrast for example)
+- **public** ->Interface methods (applySettings, getFilterName, load, save) - accessible to all
 
 #### Rule of Three
 Implemented in `Image` class:
@@ -107,7 +114,7 @@ Implemented in `Image` class:
 
 - std::vector<unsigned char> pixels - stores raw pixel data in Image class
 - std::vector<Image> gallery - stores multiple images in Menu class
-- 
+
 Vector manages memory automatically (no manual new/delete)
 
 ### Polymorphism (Virtual Methods & Abstract Classes)
