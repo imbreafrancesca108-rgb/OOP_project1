@@ -8,15 +8,16 @@ This project is a mini-version of a photo editing application , written in C++ a
 **Core classes**
 
 ### **|. Image**
-##### -defines the object
-##### -stores pixel data, dimensions and rgb channels
-##### -includes load/save operations
-##### -includes the rule of 3(copy constructor, assignment operator, destructor)
-##### -contains static member to track the total of edited images
+- defines the object
+- stores pixel data, dimensions and rgb channels
+- includes load/save operations
+- includes the rule of 3(copy constructor, assignment operator, destructor)
+- contains static member to track the total of edited images
 
 ### **||. ImageEditor**
-##### -defines the interface for editing
-##### -includes pure virtual methods:
+
+- defines the interface for editing
+- includes pure virtual methods:
 ##### ->applySettings() : modify the image according to each filter
 ##### ->getFilterName() : returns the description of the filter
 
@@ -24,50 +25,58 @@ This project is a mini-version of a photo editing application , written in C++ a
  
 ### **I. ColorFilters (derived from ImageEditor)**
 Includes 6 chromatic transformations :
-##### **BlackAndWhite**: grayscale conversion using luminance formula
-##### **GoldenHour**: warmth-focused look, enhancing red and reducing blue
-##### **Retro**: old-style look using sepia transformation formula
-##### **OrangeAndTeal**: cinema-inspired color grading focused on warm highlights and cool-toned shadows
-##### **Pastels**: soft/dreamy color pallete enhancing pinks and greens
-##### **Moody-blues**: dark and cool tones
 
-### **||. DetailFilters (derived from ImageEditor)**
+- **BlackAndWhite**: grayscale conversion using luminance formula
+- **GoldenHour**: warmth-focused look, enhancing red and reducing blue
+- **Retro**: old-style look using sepia transformation formula
+- **OrangeAndTeal**: cinema-inspired color grading focused on warm highlights and cool-toned shadows
+- **Pastels**: soft/dreamy color pallete enhancing pinks and greens
+- **Moody-blues**: dark and cool tones
+
+### **||. DetailFilters (derived from ImageEditor)*
+
 Includes 3 quality modifiers:
-##### **Contrast**: adjust contrast with formula new_pixel = amount * (pixel - 128) + 128
-##### **Grain**: adds a vintage/film-like grain using noise
-##### **Blur**: adds a soft blur using 5*5 kernel average
+
+- **Contrast**: adjust contrast with formula new_pixel = amount * (pixel - 128) + 128
+- **Grain**: adds a vintage/film-like grain using noise
+- **Blur**: adds a soft blur using 5*5 kernel average
 
 ### **III.SizeFilters (derived from ImageEditor)**
+
 Includes 2 sizing tools:
-##### **Crop**: rescales the image to new dimensions
-##### **Resize**: scales the image based on percentage
+
+- **Crop**: rescales the image to new dimensions
+- **Resize**: scales the image based on percentage
 
 ### **IV.Diamond Inheritance**
+
 Includes 6 presets combining both color and detail features, using **virtual inheritance** to solve the diamond problem:
-##### **Vintage** : BlackAndWhite + Grain+ Blur
-##### **Cinematic**: OrangeAndTeal + Grain
-##### **Summer**: GoldenHour+ high Contrast
-##### **Spring**: Pastels + Blur
-##### **Winter** : MooddyBlues + low Contrast
-##### **Autumn**: Retro+ Grain + high Contrast
+
+- **Vintage** : BlackAndWhite + Grain+ Blur
+- **Cinematic**: OrangeAndTeal + Grain
+- **Summer**: GoldenHour+ high Contrast
+- **Spring**: Pastels + Blur
+- **Winter** : MooddyBlues + low Contrast
+- **Autumn**: Retro+ Grain + high Contrast
 
 ### **V.Exceptions classes**
 Defines 6 custom exceptions derived from std::runtime_error:
-##### **AmountException**: invalid detail parameter values
-##### **OpenPath**: file could not be found
-##### **SavePath**: saving path could not be found
-##### **CropException**: invalid crop dimensions
-##### **ResizeException**: invalid resizing percentage
-##### **OptionException**: invalid/non-existing editing filters
+
+- **AmountException**: invalid detail parameter values
+- **OpenPath**: file could not be found
+- **SavePath**: saving path could not be found
+- **CropException**: invalid crop dimensions
+- **ResizeException**: invalid resizing percentage
+- **OptionException**: invalid/non-existing editing filters
 
 ### **VI.Menu**
 Singleton menu class containing:
-##### **AddImage**-loads image from files to gallery (JPG format-only)
-##### **EditImage**-applies filters from user input
-##### **DeleteImage**-removes images from gallery
-##### **SaveImage**-exports edited images to disk
-##### **ShowGallery**-displays all image-indexes from the gallery
-##### **Exit**-closes the application
+- **AddImage**-loads image from files to gallery (JPG format-only)
+- **EditImage**-applies filters from user input
+- **DeleteImage**-removes images from gallery
+- **SaveImage**-exports edited images to disk
+- **ShowGallery**-displays all image-indexes from the gallery
+- **Exit**-closes the application
 
 ## **3.Technical Implementation**
 All classes are split into .h and .cpp files.
@@ -95,8 +104,10 @@ Implemented in `Image` class:
 - **Destructor** - ~Image()- cleans up resources
 
 #### std::vector Usage
-##### std::vector<unsigned char> pixels - stores raw pixel data in Image class
-##### std::vector<Image> gallery - stores multiple images in Menu class
+
+- std::vector<unsigned char> pixels - stores raw pixel data in Image class
+- std::vector<Image> gallery - stores multiple images in Menu class
+- 
 Vector manages memory automatically (no manual new/delete)
 
 ### Polymorphism (Virtual Methods & Abstract Classes)
@@ -113,4 +124,5 @@ After you run the project:
 ## **5.Additional mentions**
 #### External Libraries
 **- stb_image.h** - Image loading (supports JPG, PNG, BMP, TGA)
+
 **- stb_image_write.h** - Image saving (JPG, PNG, BMP, TGA)
