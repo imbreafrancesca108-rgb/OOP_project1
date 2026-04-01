@@ -81,4 +81,36 @@ There are 22 classes, of which **14** are corelated to the abstract one **ImageE
 ##### └── SizeFilters
 ##### ├── Crop, Resize
 ##### Diamond inheritance: presets inherit form both 'ColorFilters' and 'DetailFilters' using **virtual public**.
+##### Static implementation: 
+static int totalEditedImages in Image class which counts all saved images across the application, static int getEditedImages() which returns the total count and static Menu* instance in Menu class which implements the Singleton .
 
+#### Encapsulation and Resource Management
+##### Access Modifiers (private, protected, public):
+**private** ->Image class members (width, height, pixels) - only accessible within Image class,**protected** -> detail filter parameters (amountGrain, amountBlur,amountContrast)-to be accessible by derived classes in case there will be more made (HighContrast for example) and **public** ->Interface methods (applySettings, getFilterName, load, save) - accessible to all. 
+
+#### Rule of Three
+Implemented in `Image` class:
+- **Copy constructor** - Image(const Image& other) - deep copy of pixel data
+- **Assignment operator** - Image& operator=(const Image& other) - prevents self-assignment, copies all members
+- **Destructor** - ~Image()- cleans up resources
+
+#### std::vector Usage
+##### std::vector<unsigned char> pixels - stores raw pixel data in Image class
+##### std::vector<Image> gallery - stores multiple images in Menu class
+Vector manages memory automatically (no manual new/delete)
+
+### Polymorphism (Virtual Methods & Abstract Classes)
+
+#### Abstract Class
+ImageEditor is an abstract class with pure virtual methods and many virtual functions throughout the programme which allow the system to treat different filter objects (BlackAndWhite, Contrast, Blur, etc.) uniformly through the same interface while they maintain their unique behaviors. 
+
+## **4.Workflow**
+After you run the project:
+-The menu gets created and the user chooses a digit between 1-6 to access an option
+-According to each input a different function is allocated with different errors being checked
+-After pressing option 6 the programme stops
+
+## **5.Additional mentions**
+#### External Libraries
+**-stb_image.h** - Image loading (supports JPG, PNG, BMP, TGA)
+**-stb_image_write.h** - Image saving (JPG, PNG, BMP, TGA)
