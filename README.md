@@ -33,7 +33,7 @@ Includes 6 chromatic transformations :
 - **Pastels**: soft/dreamy color pallete enhancing pinks and greens
 - **Moody-blues**: dark and cool tones
 
-### **||. DetailFilters (derived from ImageEditor)*
+### **II. DetailFilters (derived from ImageEditor)*
 
 Includes 3 quality modifiers:
 
