@@ -106,11 +106,11 @@ ImageEditor is an abstract class with pure virtual methods and many virtual func
 
 ## **4.Workflow**
 After you run the project:
--The menu gets created and the user chooses a digit between 1-6 to access an option
--According to each input a different function is allocated with different errors being checked
--After pressing option 6 the programme stops
+- The menu gets created and the user chooses a digit between 1-6 to access an option
+- According to each input a different function is allocated with different errors being checked
+- After pressing option 6 the programme stops
 
 ## **5.Additional mentions**
 #### External Libraries
-**-stb_image.h** - Image loading (supports JPG, PNG, BMP, TGA)
-**-stb_image_write.h** - Image saving (JPG, PNG, BMP, TGA)
+**- stb_image.h** - Image loading (supports JPG, PNG, BMP, TGA)
+**- stb_image_write.h** - Image saving (JPG, PNG, BMP, TGA)
