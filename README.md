@@ -56,7 +56,7 @@ Includes 6 presets combining both color and detail features, using **virtual inh
 - **Cinematic**: OrangeAndTeal + Grain
 - **Summer**: GoldenHour+ high Contrast
 - **Spring**: Pastels + Blur
-- **Winter** : MooddyBlues + low Contrast
+- **Winter** : MoodyBlues + low Contrast
 - **Autumn**: Retro+ Grain + high Contrast
 
 ### **V.Exceptions classes**
@@ -80,7 +80,7 @@ Singleton menu class containing:
 
 ## **3.Technical Implementation**
 All classes are split into .h and .cpp files.
-There are 28 classes, of which **22** are corelated to the abstract one **ImageEditor**.
+There are 29 classes, of which **21** are corelated to the abstract one **ImageEditor**.
 ##### Three-level hierarchy:
 ##### ImageEditor (abstract)
 ##### ├── ColorFilters
