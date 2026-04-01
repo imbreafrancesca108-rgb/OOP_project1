@@ -16,7 +16,17 @@ else()
 endif()
 
 # Main executable
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME}
+    main.cpp
+    ColorFilters.cpp
+    DetailFilters.cpp
+    Exceptions.cpp
+    Image.cpp
+    ImageEditor.cpp
+    Menu.cpp
+    Presets.cpp
+    SizeFilters.cpp
+    )
 
 if(GITHUB_ACTIONS)
     message("NOTE: GITHUB_ACTIONS defined")
