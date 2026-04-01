@@ -80,7 +80,7 @@ Singleton menu class containing:
 
 ## **3.Technical Implementation**
 All classes are split into .h and .cpp files.
-There are 22 classes, of which **14** are corelated to the abstract one **ImageEditor**.
+There are 28 classes, of which **22** are corelated to the abstract one **ImageEditor**.
 ##### Three-level hierarchy:
 ##### ImageEditor (abstract)
 ##### ├── ColorFilters
