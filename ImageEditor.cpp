@@ -3,11 +3,11 @@
 ImageEditor::ImageEditor(){}
 ImageEditor::~ImageEditor(){}
 
-ColorFilters::ColorFilters():ImageEditor(){}
+ColorFilters::ColorFilters()(){}
 ColorFilters::~ColorFilters(){}
 
-SizeFilters::SizeFilters():ImageEditor(){}
+SizeFilters::SizeFilters(){}
 SizeFilters::~SizeFilters(){}
 
-DetailFilters::DetailFilters():ImageEditor(){}
+DetailFilters::DetailFilters(){}
 DetailFilters::~DetailFilters(){}
