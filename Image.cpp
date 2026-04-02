@@ -1,8 +1,17 @@
 #include "Image.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
+#if defined(__GNUC__) || defined(__clang__)
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+#endif
+
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
+
+#if defined(__GNUC__) || defined(__clang__)
+    #pragma GCC diagnostic pop
+#endif
 #include "Exceptions.h"
 #include<stdexcept>
 #include<iostream>
@@ -106,7 +115,7 @@ try{
     int result=stbi_write_jpg(path.c_str(),width,height,rgb,rawData,100);
     if (result)
     {
-        std::cout<<"The image was edited successfully at : "<<path<<std::endl;
+        std::cout<<"The image was edited saved at : "<<path<<std::endl;
         totalEditedImages++;
     }
     else
