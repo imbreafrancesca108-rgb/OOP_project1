@@ -68,8 +68,8 @@ void Menu::addImage(){
     try{
     if(!img.load(path))
        throw OpenPath(path);
-
-       gallery.push_back(img);
+    else
+        gallery.push_back(img);
        std::cout<<"The image was added to the gallery!\n";
     }
     catch (const OpenPath& e){
