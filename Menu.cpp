@@ -311,7 +311,7 @@ void Menu::showGallery()
 
     std::cout<<"---- PhotoGallery -----\n";
     std::cout<<"\n";
-    for(int i=0;i<gallery.size();++i)
+    for(size_t i=0;i<gallery.size();++i)
     {
         std::cout<<"Image "<<i<<" "<<gallery[i].getFilename()<<std::endl;
     }
