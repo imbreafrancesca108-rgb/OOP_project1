@@ -3,7 +3,7 @@
 ImageEditor::ImageEditor(){}
 ImageEditor::~ImageEditor(){}
 
-ColorFilters::ColorFilters()(){}
+ColorFilters::ColorFilters(){}
 ColorFilters::~ColorFilters(){}
 
 SizeFilters::SizeFilters(){}
