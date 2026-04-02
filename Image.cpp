@@ -38,7 +38,7 @@ this->width=other.width;
 this->height=other.height;
 this->rgb=other.rgb;
 this->filename=other.filename;
-for(int i=0;i<other.pixels.size();++i)
+for(size_t i=0;i<other.pixels.size();++i)
     this->pixels.push_back(other.pixels[i]);
 
 }
